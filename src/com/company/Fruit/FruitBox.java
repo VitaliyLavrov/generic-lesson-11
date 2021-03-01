@@ -3,7 +3,7 @@ package com.company.Fruit;
 import java.util.ArrayList;
 
 public class FruitBox<T extends Fruit> {
-    private ArrayList<T> container = new ArrayList<T>();
+    private ArrayList<Fruit> container = new ArrayList<>();
 
     public FruitBox(T... fruits) {
         for (int i = 0; i < fruits.length; i++) {
@@ -16,7 +16,8 @@ public class FruitBox<T extends Fruit> {
     // зная вес одного фрукта и их количество: вес яблока – 1.0f, апельсина – 1.5f
     // (единицы измерения не важны);
     public double getWeight() {
-        return (container.get(0).getWeight() * container.size());
+        if (this.container.isEmpty()){ System.out.println("пусто"); return 0.0;
+        }else   return (container.get(0).getWeight() * container.size());
     }
 
     // Внутри класса Box сделать метод compare(), который позволяет сравнить текущую коробку с той,
@@ -29,4 +30,15 @@ public class FruitBox<T extends Fruit> {
     //Помним про сортировку фруктов: нельзя яблоки высыпать в коробку с апельсинами.
     // Соответственно, в текущей коробке фруктов не остается,
     // а в другую перекидываются объекты, которые были в первой;
+
+    public void transferFruits(FruitBox<T> anotherBox){
+        anotherBox.container.addAll(this.container);
+        this.container.clear();
+
+    }
+        public   void addFruit(T fruit){
+        if (true) {
+            this.container.add(fruit);
+        }
+    }
 }
