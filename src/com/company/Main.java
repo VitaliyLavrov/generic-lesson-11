@@ -5,6 +5,8 @@ import com.company.lesson11.Stats;
 import com.company.lesson11.TestGeneric;
 import com.company.lesson11.TwoGen;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,14 +20,23 @@ public class Main {
         swapsTwoElements(intArr,3, 0);
         for (int i = 0; i < intArr.length; i++) {
             System.out.print(intArr[i]);
-
-
-
-
         }
+        System.out.println();
+        //Написать метод, который преобразует массив в ArrayList
+            ArrayList<Integer> intlist = arrToArrList(intArr);
+                System.out.println(intlist);
+
 
     }
 
+
+    public static <T>ArrayList<T> arrToArrList(T[] arr){
+        ArrayList<T> list = new ArrayList<T>();
+        for (int i = 0; i < arr.length; i++) {
+            list.add(arr[i]);
+        }
+        return list;
+    }
 
     public static <T> void swapsTwoElements( T[] arr, int i, int j) {
         if (i < arr.length && j < arr.length && i >= 0 && j >= 0) {
