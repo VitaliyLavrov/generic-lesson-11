@@ -19,12 +19,12 @@ public class Main {
 
         secondTask(intArr);
 
-        thirdЕask();
+        thirdTask();
 
 
     }
 
-    private static void thirdЕask() {
+    private static void thirdTask() {
         System.out.println();
         FruitBox<Apple> appleBox = new FruitBox<Apple>(
                 new Apple(), new Apple(), new Apple(), new Apple(), new Apple());
