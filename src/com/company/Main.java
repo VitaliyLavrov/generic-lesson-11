@@ -2,7 +2,6 @@ package com.company;
 
 
 import com.company.Fruit.Apple;
-import com.company.Fruit.Fruit;
 import com.company.Fruit.FruitBox;
 import com.company.Fruit.Orange;
 
@@ -40,20 +39,32 @@ public class Main {
         FruitBox<Orange> orangeBox = new FruitBox<>(new Orange(), new Orange(), new Orange(), new Orange());
         System.out.println("Можно сравнивать коробки с яблоками и апельсинами;\n");
         System.out.println(appleBox1.getWeight());
+
         System.out.println(orangeBox.getWeight());
         System.out.println(appleBox1.compare(orangeBox));
 
         System.out.println("Написать метод, который позволяет пересыпать фрукты из текущей коробки в другую");
         FruitBox<Apple> appleBox3 = new FruitBox<>();
+        System.out.println("первая коробка");
+
         System.out.println(appleBox3.getWeight());
+        System.out.println("вторая коробка");
+
         System.out.println(appleBox.getWeight());
+        System.out.println("обмен");
 
         appleBox.transferFruits(appleBox3);
+        System.out.println("первая коробка");
+
         System.out.println(appleBox3.getWeight());
+        System.out.println("вторая коробка");
+
         System.out.println(appleBox.getWeight());
 
         System.out.println("Не забываем про метод добавления фрукта в коробку.\n");
         appleBox.addFruit(new Apple());
+        System.out.println("добавил 1 яблоко в пустую коробку");
+
         System.out.println(appleBox.getWeight());
     }
 
